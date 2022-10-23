@@ -29,11 +29,26 @@ Simply make a REQUST at the end-point given
 Response:
 ```
 {
-    "tasks" : [
-        "task here...",
-        "task here...",
-        "task here...",
-        "task here...",
+    "status": "success",
+    "tasks": [
+        {
+            "id": 0,
+            "title": "Home related",
+            "description": "Some description here.",
+            "isCompleted": false
+        },
+        {
+            "id": 1,
+            "title": "Python Coding task",
+            "description": "Develop a REST API",
+            "isCompleted": false
+        },
+        {
+            "id": 2,
+            "title": "Others",
+            "description": "Make some notes from the Podcast",
+            "isCompleted": false
+        }
     ]
 }
 ```
@@ -47,7 +62,13 @@ To get a specific task, send payload as following to GET method
 Response:
 ```
 {
-    "task": "task here..."
+    "status": "success",
+    "task": {
+        "id": 0,
+        "title": "Home related",
+        "description": "Some description here.",
+        "isCompleted": false
+    }
 }
 ```
 
@@ -55,8 +76,9 @@ Response:
 
 Request payload:
 ```
-{
-    "task": "Some new task here"
+{   
+    "title": "Some title",
+    "description": "Some description"
 }
 ```
 
@@ -73,7 +95,9 @@ Request payload:
 ```
 {
     "id": 0,
-    "task": "Updated task here..."
+    "title": "Some new title",
+    "description": "Some new description",
+    "isCompleted: true,
 }
 ```
 

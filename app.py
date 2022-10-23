@@ -6,11 +6,24 @@ api = Api(app)
 
 
 todos = [
-    'Do the shopping',
-    'Develop a testing API today',
-    'Write an article on Medium',
-    'Start development of the website',
-    'Start a new podcast',
+    {
+        'id': 0,
+        'title': 'Home related',
+        'description': 'Some description here.',
+        'isCompleted': False,
+    },
+    {
+        'id': 1,
+        'title': 'Python Coding task',
+        'description': 'Develop a REST API',
+        'isCompleted': False,
+    },
+    {
+        'id': 2,
+        'title': 'Others',
+        'description': 'Make some notes from the Podcast',
+        'isCompleted': False,
+    },
 ]
 
 
@@ -21,6 +34,7 @@ class TODOs(Resource):
             data = flask.request.get_json(silent=True)
             if data == None:
                 return {
+                    'status': 'success',
                     'tasks': todos,
                 }
 
@@ -37,9 +51,14 @@ class TODOs(Resource):
     def post(self):
         try:
             data = flask.request.get_json(force=True)
-            task = data['task']
+            new_todo = {
+                "id": len(todos),
+                "title": data['title'],
+                "description": data['description'],
+                "isCompleted": False,
+            }
 
-            todos.append(task)
+            todos.append(new_todo)
 
             return {
                 'status': 'success',
@@ -54,10 +73,8 @@ class TODOs(Resource):
         try:
             data = flask.request.get_json(force=True)
             index = data['id']
-            updated_task = data['task']
 
-            print(index, updated_task)
-            todos[index] = updated_task
+            todos[index] = data
 
             return {
                 'status': 'success',
