@@ -9,18 +9,18 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open `http://localhost:8080/tasks` at your browser to see if you are getting all tasks
+Open http://localhost:8080/tasks at your browser to see if you are getting all tasks
 
 ### Deployed
-It's deployed on Heroku at `https://flask-restful-tasks.herokuapp.com/tasks`
+It's deployed on Heroku at https://flask-restful-tasks.herokuapp.com/tasks
 
 
 ### Available methods
 Below is the end-point that remains the same for all the methods to keep things simple.
 
-Local Endpoint: `http://localhost:8080/tasks`
+Local Endpoint: http://localhost:8080/tasks
 
-Deployed Endpoint: `https://flask-restful-tasks.herokuapp.com/tasks`
+Deployed Endpoint: https://flask-restful-tasks.herokuapp.com/tasks
 
 ### ⬇️ GET
 
