@@ -5,26 +5,22 @@ A very simple example of TODO App CRUD operations via REST API in flask-restful 
 ```
 git clone https://github.com/mhmzdev/flask-restful-CRUD
 cd flask-restful_CRUD
-pip install -r requirements_local.text
+pip install -r requirements.txt
 python app.py
 ```
 
 Open `http://localhost:8080/tasks` at your browser to see if you are getting all tasks
 
-### Deploying
-It's deployed on Heroku at
+### Deployed
+It's deployed on Heroku at `https://flask-restful-tasks.herokuapp.com/tasks`
 
-For that you need some more pip libraries to be installed and you can use:
-```
-pip install -r requirements_deploy.txt`
-```
-
-Follow some article or tutorial to deploy :)
 
 ### Available methods
 Below is the end-point that remains the same for all the methods to keep things simple.
 
-Endpoint: `http://localhost:8080/tasks`
+Local Endpoint: `http://localhost:8080/tasks`
+
+Deployed Endpoint: `https://flask-restful-tasks.herokuapp.com/tasks`
 
 ### ⬇️ GET
 
